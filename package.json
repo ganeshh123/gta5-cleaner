@@ -1,0 +1,22 @@
+{
+  "name": "gta5-cleaner",
+  "version": "1.0.0",
+  "description": "A tool to clean out mods from Grand Theft Auto 5 for online play, and restore them later.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganeshh123/gta5-cleaner.git"
+  },
+  "author": {
+    "name": "Ganesh H",
+    "url": "https://ganeshh123.github.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ganeshh123/gta5-cleaner/issues"
+  },
+  "homepage": "https://github.com/ganeshh123/gta5-cleaner#readme"
+}
