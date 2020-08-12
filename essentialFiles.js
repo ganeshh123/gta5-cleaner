@@ -40,5 +40,6 @@ module.exports = [
     'x64u.rpf',
     'x64v.rpf',
     'x64w.rpf',
-    'gta5cleaner.exe'
+    'gta5cleaner.exe',
+    'modstore'
 ]

@@ -19,6 +19,10 @@ let cleanMods = (filePath) => {
                 return !essentialFiles.includes(file)
             }
         )
+        if(files.length < 1){
+            console.log('\nNo mod files found\n')
+            return
+        }
 
         let newPaths = []
 
@@ -28,13 +32,15 @@ let cleanMods = (filePath) => {
             files[index] = path.join(filePath, file)
         })
 
-        fileSystem.mkdirSync(path.join(filePath, '/modstore/'))
+        if(!fileSystem.existsSync(path.join(filePath, '/modstore/'))){
+            fileSystem.mkdirSync(path.join(filePath, '/modstore/'))
+        }
 
         files.forEach((file, index) => {
             fileSystem.renameSync(file, newPaths[index])
         })
 
-        console.log('Moved mods to modstore folder.')
+        console.log('\nMoved mods to modstore folder.')
         console.log('You can now play Online.')
     }
 }
@@ -58,7 +64,7 @@ let restoreMods = (filePath) => {
             fileSystem.renameSync(file, newPaths[index])
         })
 
-        console.log('Restored Mods to GTA V!')
+        console.log('\nRestored Mods to GTA V!')
         fileSystem.rmdirSync(filePathMods)
 
 
