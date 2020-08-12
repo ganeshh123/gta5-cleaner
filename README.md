@@ -48,4 +48,3 @@ Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cl
 
 
 ### Compiling a Windows Executable
-### Compiling a Windows Executable
