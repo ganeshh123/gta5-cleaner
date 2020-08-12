@@ -17,6 +17,8 @@ Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cl
   'clean' : Cleans your GTA 5 Installation of mods leaving you with the Base Game for Online Play
   
   'restore': Restores cleaned mods for Single Player
+
+  ![usage](/docs/usage.png)
   
 4. Once the process is completed, press any key to exit the tool and open the game normally
 
