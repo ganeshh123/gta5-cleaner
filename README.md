@@ -11,10 +11,8 @@ Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cl
 1. Download and extract 'gta5cleaner.exe' to the root 'Grand Theft Auto V' folder (same place as GTAV.exe)
 2. Double Click and run 'gta5cleaner.exe'
 3. Enter your choice. Either 'clean' or 'restore'
-
-  'clean' : Cleans your GTA 5 Installation of mods leaving you with the Base Game for Online Play
-  
-  'restore': Restores cleaned mods for Single Player
+ - 'clean' : Cleans your GTA 5 Installation of mods leaving you with the Base Game for GTA Online
+ - 'restore': Restores cleaned mods for Single Player
   
 4. Once the process is completed, press any key to exit the tool and open the game normally
 
