@@ -42,7 +42,7 @@ Alternatively, install manually like this:
     ```bash
     npm install -g nexe
     ```
-2. In the project root folder build some executables with this version of nexe to download node binaries for Windows and Mac:
+2. In the project root folder build some executables with this version of nexe to download node binaries for Windows:
 
     ```bash
     nexe . --target win32-x86-10.13.0
