@@ -40,7 +40,9 @@ module.exports = [
     'x64w.rpf',
     /* Steam Install */
     'steam_api64.dll',
+    'steam_appid.txt',
     'installscript.vdf',
+    'EntryPoints.txt',
     /* Epic Games Install */
     '.egstore',
     'GPUPerfAPIDX11-x64.dll',
