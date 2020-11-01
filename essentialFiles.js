@@ -40,6 +40,10 @@ module.exports = [
     'x64u.rpf',
     'x64v.rpf',
     'x64w.rpf',
+    '.egstore',
+    'GPUPerfAPIDX11-x64.dll',
+    'NvPmApi.Core.win64.dll',
+    'version.txt',
     'gta5cleaner.exe',
     'modstore'
 ]
