@@ -80,3 +80,6 @@ To build a Windows Executable, run the command:
 nexe . --target win32-x86-10.13.0 -o ./dist/gta5cleaner.exe
 ```
 in the root directory of the project.
+
+## Credits
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

@@ -14,9 +14,7 @@ module.exports = [
     'GTA5.exe',
     'GTAVLanguageSelect.exe',
     'GTAVLauncher.exe',
-    'installscript.vdf',
     'PlayGTAV.exe',
-    'steam_api64.dll',
     'x64a.rpf',
     'x64b.rpf',
     'x64c.rpf',
@@ -40,10 +38,18 @@ module.exports = [
     'x64u.rpf',
     'x64v.rpf',
     'x64w.rpf',
+    /* Steam Install */
+    'steam_api64.dll',
+    'installscript.vdf',
+    /* Epic Games Install */
     '.egstore',
     'GPUPerfAPIDX11-x64.dll',
     'NvPmApi.Core.win64.dll',
     'version.txt',
+    'Readme',
+    'Redistributables',
+    'EOSSDK-Win64-Shipping.dll',
+    /* GTA 5 Cleaner */
     'gta5cleaner.exe',
     'modstore'
 ]
