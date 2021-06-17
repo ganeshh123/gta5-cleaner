@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA 5 Cleaner - Remove and restore mods on GTA 5</title>
-    <link rel="icon" type="image/png" href="https://ganeshh123.github.io/assets/icon_trans.png"/>
-    <meta name="description" content="A tool to remove mods from  Grand Theft Auto 5 for online play, and restore them for single player."/>
+    <link rel="icon" type="image/png" href="https://ganeshh123.github.io/assets/icon_trans.png" />
+    <meta name="description"
+        content="A tool to remove mods from  Grand Theft Auto 5 for online play, and restore them for single player." />
     <style>
         @font-face {
             font-family: "iA Writer Quattro S";
@@ -20,8 +21,24 @@
             box-sizing: border-box;
         }
 
+        html {
+            max-height: 100vh;
+            max-width: 100vw;
+        }
+
         body {
             background-color: rgb(47, 52, 55);
+            max-width: 100vw;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6, p, caption, ul, figure{
+            max-width: 100%;
         }
 
         img {
@@ -29,8 +46,43 @@
             height: auto;
         }
 
+        p{
+            margin-left: 10px;
+        }
+
         code {
+            margin-left: 10px;
             background-color: #3f4447;
+        }
+
+        #contents,
+        ul {
+            list-style-type: none;
+        }
+
+        iframe {
+            width: 640px;
+            height: 360px;
+        }
+
+        #footer{
+            margin-top: 15px;
+            text-align: center;
+            width: 100vw;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 425px) {
+            iframe{
+                width: 384px;
+                height: 216px;
+            }
+
+            img{
+                max-width: 300px;
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -38,14 +90,32 @@
 <body>
     <h1 id="gta-5-cleaner">GTA 5 Cleaner</h1>
     <p>A tool to clean out mods from Grand Theft Auto 5 for online play, and restore them later.</p>
+    <ul id="contents">
+        <li><a href="#download">Download</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#building">Building</a></li>
+        <ul>
+            <li><a href="#running-on-node">Running on Node</a></li>
+            <li><a href="#compiling-a-windows-executable">Compiling a Windows Executable</a></li>
+            <ul>
+                <li><a href="#installing-the-correct-version-of-nexe">Installing the correct version of nexe</a>
+                </li>
+                <li><a href="#compiling-the-exe">Compiling the exe</a></li>
+            </ul>
+
+        </ul>
+
+        <li><a href="#credits">Credits</a></li>
+    </ul>
     <h2 id="download">Download</h2>
     <p>Get the latest version from the <a href="https://github.com/ganeshh123/gta5-cleaner/releases/latest">Releases</a>
         page.</p>
     <p><a href="https://github.com/ganeshh123/gta5-cleaner/releases/download/1.1.0/gta5cleaner_1.1.0.zip">Download for
             Windows</a></p>
     <h2 id="usage">Usage</h2>
-    <iframe width="768" height="432" src="https://www.youtube-nocookie.com/embed/zXaj4TfBQY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <br /><caption>Video Guide</caption>
+    <iframe src='https://www.youtube.com/embed/zXaj4TfBQY8' frameborder='0' allowfullscreen></iframe>
+    <br />
+    <caption>Video Guide</caption>
     <ol>
         <li>
             <p>Download and extract &lsquo;gta5cleaner.exe&rsquo; to the root &lsquo;Grand Theft Auto V&rsquo; folder
@@ -120,6 +190,8 @@
     <h2 id="credits">Credits</h2>
     <p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
             href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+
+    <a id='footer' href='https://nesh.gq/'>© Ganesh H</a>
 </body>
 
 </html>
