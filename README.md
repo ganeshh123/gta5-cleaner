@@ -18,7 +18,7 @@ Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cl
   
   'restore': Restores cleaned mods for Single Player
 
-  ![usage](/docs/usage.png)
+  ![usage](docs/usage.png)
   
 4. Once the process is completed, press any key to exit the tool and open the game normally
 
@@ -66,7 +66,7 @@ Confirm by running:
 nexe -v
 ```
 
-![nexe-version](/docs/nexe-version.png)
+![nexe-version](docs/nexe-version.png)
 
 Check that the version is `4.0.0-beta.4`
 

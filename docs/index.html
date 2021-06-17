@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 5 Cleaner</title>
+
+    <style>
+        @font-face {
+            font-family: "iA Writer Quattro S";
+            src: url("https://ganeshh123.github.io/assets/iAWriterQuattroS-Regular.woff") format("woff")
+        }
+
+        * :not(code) {
+            font-family: 'iA Writer Quattro S', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(47, 52, 55);
+        }
+
+        img {
+            max-width: 600px;
+            height: auto;
+        }
+
+        code {
+            background-color: #3f4447;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="gta-5-cleaner">GTA 5 Cleaner</h1>
+    <p>A tool to clean out mods from Grand Theft Auto 5 for online play, and restore them later.</p>
+    <h2 id="download">Download</h2>
+    <p>Get the latest version from the <a href="https://github.com/ganeshh123/gta5-cleaner/releases/latest">Releases</a>
+        page.</p>
+    <p><a href="https://github.com/ganeshh123/gta5-cleaner/releases/download/1.1.0/gta5cleaner_1.1.0.zip">Download for
+            Windows</a></p>
+    <h2 id="usage">Usage</h2>
+    <ol>
+        <li>
+            <p>Download and extract &lsquo;gta5cleaner.exe&rsquo; to the root &lsquo;Grand Theft Auto V&rsquo; folder
+                (same place as GTAV.exe)</p>
+        </li>
+        <li>
+            <p>Double Click and run &lsquo;gta5cleaner.exe&rsquo;</p>
+        </li>
+        <li>
+            <p>Enter your choice. Either &lsquo;clean&rsquo; or &lsquo;restore&rsquo;</p>
+        </li>
+    </ol>
+    <p>&lsquo;clean&rsquo; : Cleans your GTA 5 Installation of mods leaving you with the Base Game for Online Play</p>
+    <p>&lsquo;restore&rsquo;: Restores cleaned mods for Single Player</p>
+    <p>
+    <figure><img src="usage.png" alt="usage"></figure>
+    </p>
+    <ol start="4">
+        <li>Once the process is completed, press any key to exit the tool and open the game normally</li>
+    </ol>
+    <h2 id="building">Building</h2>
+    <h3 id="running-on-node">Running on Node</h3>
+    <ol>
+        <li>
+            <p>Clone/Download the project and copy app.js and essentialFiles.js into the GTA 5 Installation root
+                directory.</p>
+        </li>
+        <li>
+            <p>Open Command Prompt inside the GTA V Installation root directory and run <code>node app.js</code></p>
+        </li>
+    </ol>
+    <h3 id="compiling-a-windows-executable">Compiling a Windows Executable</h3>
+    <p>Executables are compiled with a very <a href="https://github.com/cspotcode/nexe/tree/fix-vfs">specific version of
+            nexe</a> that allows access to the filesystem, which has a tricky setup procedure.</p>
+    <h4 id="installing-the-correct-version-of-nexe">Installing the correct version of nexe</h4>
+    <p>Run <strong>install_nexe_win.bat</strong> as admin on <strong>Windows</strong>, will take about 5 minutes to
+        install fully.</p>
+    <p>Alternatively, install manually like this:</p>
+    <ol>
+        <li>
+            <p>Firstly, install the general <a href="https://www.npmjs.com/package/nexe">nexe</a> globally with the
+                command:</p>
+            <pre><code class="language-bash">npm install -g nexe</code></pre>
+        </li>
+        <li>
+            <p>In the project root folder build some executables with this version of nexe to download node binaries for
+                Windows:</p>
+            <pre><code class="language-bash">nexe . --target win32-x86-10.13.0</code></pre>
+            <p>This will download the binaries we need for later, delete the executables built with this for now.</p>
+        </li>
+        <li>
+            <p>Now we need to install a <a href="https://github.com/cspotcode/nexe/tree/fix-vfs">specific version of
+                    nexe</a> that allows access to the filesystem:</p>
+            <p>Run the command:</p>
+            <pre><code class="language-bash">npm install -g cspotcode/nexe#19a5046</code></pre>
+        </li>
+    </ol>
+    <p>Now we should have the correct version of nexe for building.</p>
+    <p>Confirm by running:</p>
+    <pre><code class="language-bash">nexe -v</code></pre>
+    <p>
+    <figure><img src="nexe-version.png" alt="nexe-version"></figure>
+    </p>
+    <p>Check that the version is <code>4.0.0-beta.4</code></p>
+    <h4 id="compiling-the-exe">Compiling the exe</h4>
+    <p>Run <strong>build_win32.bat</strong> on <strong>Windows</strong> to build a Windows Executable. This can be found
+        in /dist.</p>
+    <h5>To Compile Manually</h5>
+    <p>To build a Windows Executable, run the command:</p>
+    <pre><code class="language-bash">nexe . --target win32-x86-10.13.0 -o ./dist/gta5cleaner.exe</code></pre>
+    <p>in the root directory of the project.</p>
+    <h2 id="credits">Credits</h2>
+    <p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+</body>
+
+</html>
