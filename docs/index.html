@@ -9,95 +9,20 @@
     <link rel="icon" type="image/png" href="https://ganeshh123.github.io/assets/icon_trans.png" />
     <meta name="description"
         content="A tool to remove mods from  Grand Theft Auto 5 for online play, and restore them for single player." />
-    <style>
-        @font-face {
-            font-family: "iA Writer Quattro S";
-            src: url("https://cors.bridged.cc/https://ganeshh123.github.io/assets/iAWriterQuattroS-Regular.woff") format("woff")
-        }
-
-        * :not(code) {
-            font-family: 'iA Writer Quattro S', sans-serif;
-            color: rgba(255, 255, 255, 0.9);
-            box-sizing: border-box;
-        }
-
-        html {
-            max-height: 100vh;
-            max-width: 100vw;
-        }
-
-        body {
-            background-color: rgb(47, 52, 55);
-            max-width: 100vw;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding-left: 10px;
-        }
-
-        h1, h2, h3, h4, h5, h6, p, caption, ul, figure{
-            max-width: 100%;
-        }
-
-        img {
-            max-width: 600px;
-            height: auto;
-        }
-
-        p{
-            margin-left: 10px;
-        }
-
-        code {
-            margin-left: 10px;
-            background-color: #3f4447;
-        }
-
-        #contents,
-        ul {
-            list-style-type: none;
-        }
-
-        iframe {
-            width: 640px;
-            height: 360px;
-        }
-
-        #footer{
-            margin-top: 15px;
-            text-align: center;
-            width: 100vw;
-            margin-bottom: 10px;
-            text-decoration: none;
-        }
-
-        @media only screen and (max-width: 425px) {
-            iframe{
-                width: 384px;
-                height: 216px;
-            }
-
-            img{
-                max-width: 300px;
-                height: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://nesh.gq/assets/style-project.css">
 </head>
 
 <body>
     <h1 id="gta-5-cleaner">GTA 5 Cleaner</h1>
     <p>A tool to clean out mods from Grand Theft Auto 5 for online play, and restore them later.</p>
-    <ul id="contents">
+    <ul class="contents">
         <li><a href="#download">Download</a></li>
         <li><a href="#usage">Usage</a></li>
         <li><a href="#building">Building</a></li>
-        <ul>
+        <ul class="contents">
             <li><a href="#running-on-node">Running on Node</a></li>
             <li><a href="#compiling-a-windows-executable">Compiling a Windows Executable</a></li>
-            <ul>
+            <ul class="contents">
                 <li><a href="#installing-the-correct-version-of-nexe">Installing the correct version of nexe</a>
                 </li>
                 <li><a href="#compiling-the-exe">Compiling the exe</a></li>
