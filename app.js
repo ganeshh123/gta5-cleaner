@@ -43,7 +43,9 @@ const cleanMods = (filePath) => {
                 fileSystem.renameSync(file, newPaths[index])
             }
             catch(err){
-                console.error(`An error occured when trying to move\n${file}\n`, err)
+                console.error(`\nAn error occured when trying to move\n${file}\n`)
+                console.error(err)
+                console.log(`\n`)
                 errors.push(err)
             }
         })
@@ -81,14 +83,14 @@ const restoreMods = (filePath) => {
     }
 }
 
-const isValidGTA5Folder = (path) => {
+const isValidGTA5Folder = (filePath) => {
     const directoryFiles = fileSystem.readdirSync(filePath)
     const required = ['GTA5.exe', 'x64']
-    required.forEach((file) => {
+    for(const file of required){
         if(directoryFiles.includes(file) === false){
             return false
         }
-    })
+    }
     return true
 }
 
@@ -104,8 +106,8 @@ const main = () => {
     console.log('\nGTA V Mod Cleaner')
 
     if(isValidGTA5Folder(process.cwd()) === false){
-        console.log(`Please place "gta5cleaner.exe" inside your GTA 5 install folder and try again.`)
-        terminate()
+        console.log(`\nPlease place "gta5cleaner.exe" inside your GTA 5 install folder and try again.`)
+        return terminate()
     }
 
 
