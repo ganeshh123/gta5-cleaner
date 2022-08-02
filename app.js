@@ -9,6 +9,8 @@ const terminal = readline.createInterface({
     output: process.stdout
 })
 
+let errors =[]
+
 /* Import Files to Keep */
 const essentialFiles = require('./essentialFiles')
 
@@ -37,7 +39,13 @@ const cleanMods = (filePath) => {
         }
 
         files.forEach((file, index) => {
-            fileSystem.renameSync(file, newPaths[index])
+            try{
+                fileSystem.renameSync(file, newPaths[index])
+            }
+            catch(err){
+                console.error(`An error occured when trying to move\n${file}\n`, err)
+                errors.push(err)
+            }
         })
 
         console.log('\nMoved mods to modstore folder.')
