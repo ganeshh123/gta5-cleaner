@@ -1,25 +1,25 @@
 // Require Filesystem
-let fileSystem = require('fs')
-let path = require('path')
-let readline = require('readline')
+const fileSystem = require('fs')
+const path = require('path')
+const readline = require('readline')
 
 /* Interface for reading input */
-let terminal = readline.createInterface({
+const terminal = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-  })
+})
 
 /* Import Files to Keep */
-let essentialFiles = require('./essentialFiles')
+const essentialFiles = require('./essentialFiles')
 
-let cleanMods = (filePath) => {
+const cleanMods = (filePath) => {
     if (fileSystem.existsSync(filePath)) {
-      /* Ensure that software files and generated PDFs are not deleted */
+        /* Ensure that software files and generated PDFs are not deleted */
         let files = fileSystem.readdirSync(filePath).filter((file) => {
-                return !essentialFiles.includes(file)
-            }
+            return !essentialFiles.includes(file)
+        }
         )
-        if(files.length < 1){
+        if (files.length < 1) {
             console.log('\nNo mod files found\n')
             return
         }
@@ -32,7 +32,7 @@ let cleanMods = (filePath) => {
             files[index] = path.join(filePath, file)
         })
 
-        if(!fileSystem.existsSync(path.join(filePath, '/modstore/'))){
+        if (!fileSystem.existsSync(path.join(filePath, '/modstore/'))) {
             fileSystem.mkdirSync(path.join(filePath, '/modstore/'))
         }
 
@@ -45,13 +45,13 @@ let cleanMods = (filePath) => {
     }
 }
 
-let restoreMods = (filePath) => {
+const restoreMods = (filePath) => {
     filePathMods = path.join(filePath, '/modstore/')
-    
-    if (fileSystem.existsSync(filePathMods)){
-        
+
+    if (fileSystem.existsSync(filePathMods)) {
+
         let files = fileSystem.readdirSync(filePathMods)
-        
+
         let newPaths = []
 
         files.forEach((file, index) => {
@@ -68,31 +68,58 @@ let restoreMods = (filePath) => {
         fileSystem.rmdirSync(filePathMods)
 
 
-    }else{
+    } else {
         console.log('Unable to restore mods, modstore folder does not exist!')
     }
 }
 
-console.log('\nGTA V Mod Cleaner')
-console.log('\nWould you like to "clean" mods from GTA V for GTA Online, or "restore" mods for Single Player?')
-console.log('\nType "clean" to clean mods and press Enter')
-console.log('Type "restore" to restore mods and press Enter')
-terminal.question('\nYour Choice : ', (choice) => {
+const isValidGTA5Folder = (path) => {
+    const directoryFiles = fileSystem.readdirSync(filePath)
+    const required = ['GTA5.exe', 'x64']
+    required.forEach((file) => {
+        if(directoryFiles.includes(file) === false){
+            return false
+        }
+    })
+    return true
+}
 
-    terminal.close();
+const terminate = () => {
+    console.log('\nPress any key to exit')
 
-    if(choice === 'clean'){
-        cleanMods(process.cwd())
-    }else if(choice === 'restore'){
-        restoreMods(process.cwd())
-    }else{
-        console.log('Invalid Choice')
+    process.stdin.setRawMode(true)
+    process.stdin.resume()
+    process.stdin.on('data', process.exit.bind(process, 0))
+}
+
+const main = () => {
+    console.log('\nGTA V Mod Cleaner')
+
+    if(isValidGTA5Folder(process.cwd()) === false){
+        console.log(`Please place "gta5cleaner.exe" inside your GTA 5 install folder and try again.`)
+        terminate()
     }
 
-    console.log('\nPress any key to exit');
 
-    process.stdin.setRawMode(true);
-    process.stdin.resume();
-    process.stdin.on('data', process.exit.bind(process, 0));
+    console.log('\nWould you like to "clean" mods from GTA V for GTA Online, or "restore" mods for Single Player?')
+    console.log('\nType "clean" to clean mods and press Enter')
+    console.log('Type "restore" to restore mods and press Enter')
+    terminal.question('\nYour Choice : ', (choice) => {
 
-});
+        terminal.close();
+
+        if (choice === 'clean') {
+            cleanMods(process.cwd())
+        } else if (choice === 'restore') {
+            restoreMods(process.cwd())
+        } else {
+            console.log('Invalid Choice')
+        }
+
+        terminate()
+
+    })
+}
+
+main()
+
