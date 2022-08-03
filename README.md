@@ -5,7 +5,7 @@ A tool to clean out mods from Grand Theft Auto 5 for online play, and restore th
 
 Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cleaner/releases/latest) page.
 
-[Download for Windows](https://github.com/ganeshh123/gta5-cleaner/releases/download/1.1.0/gta5cleaner_1.1.0.zip)
+[Download for Windows](https://github.com/ganeshh123/gta5-cleaner/releases/download/1.2.0/gta5cleaner_1.2.0.zip)
 
 ## Usage
 1. Download and extract 'gta5cleaner.exe' to the root 'Grand Theft Auto V' folder (same place as GTAV.exe)
@@ -21,6 +21,11 @@ Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cl
   ![usage](docs/usage.png)
   
 4. Once the process is completed, press any key to exit the tool and open the game normally
+
+5. If you use OpenIV or for extra safety, you should verify the integrity of your game files:
+    - Steam: [https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB](https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB)
+    - Rockstar Launcher: [https://support.rockstargames.com/articles/360036000713/](https://support.rockstargames.com/articles/360036000713/)
+    - Epic Games Launcher: [https://www.epicgames.com/help/en-US/technical-support-c90/general-support-c91/how-do-i-verify-game-files-in-the-epic-games-launcher-a3638](https://www.epicgames.com/help/en-US/technical-support-c90/general-support-c91/how-do-i-verify-game-files-in-the-epic-games-launcher-a3638)
 
 ## Building
 ### Running on Node
