@@ -1,4 +1,5 @@
 // Require Filesystem
+const { Console } = require('console')
 const fileSystem = require('fs')
 const path = require('path')
 const readline = require('readline')
@@ -49,9 +50,16 @@ const cleanMods = (filePath) => {
                 errors.push(err)
             }
         })
+    }
 
-        console.log('\nMoved mods to modstore folder.')
-        console.log('You can now play Online.')
+    if(errors.length === 0){
+        finishClean()
+    }else{
+        console.log(`Some files could not be moved, please check the errors above.`)
+        console.log(`Please try the following:`)
+        console.log(`- Ensure GTA V, Rockstar Launcher and Mod Managers are quit completely`)
+        console.log(`- Run "gta5cleaner" as an Adminstrator`)
+        console.log(`- Move the files above into the modstore folder yourself`)
     }
 }
 
@@ -71,11 +79,27 @@ const restoreMods = (filePath) => {
         })
 
         files.forEach((file, index) => {
-            fileSystem.renameSync(file, newPaths[index])
+            try{
+                fileSystem.renameSync(file, newPaths[index])
+            }
+            catch(err){
+                console.error(`\nAn error occured when trying to restore\n${file}\n`)
+                console.error(err)
+                console.log(`\n`)
+                errors.push(err)
+            }
         })
 
-        console.log('\nRestored Mods to GTA V!')
-        fileSystem.rmdirSync(filePathMods)
+        if(errors.length === 0){
+            console.log('\nRestored Mods to GTA V!')
+            fileSystem.rmdirSync(filePathMods)
+        }else{
+            console.log(`Some files could not be restored, please check the errors above.`)
+            console.log(`Please try the following:`)
+            console.log(`- Ensure that GTA V is quit completely`)
+            console.log(`- Run "gta5cleaner" as an Adminstrator`)
+            console.log(`- Copy the contents of the modstore folder into your GTA V main directory`)
+        }
 
 
     } else {
@@ -92,6 +116,16 @@ const isValidGTA5Folder = (filePath) => {
         }
     }
     return true
+}
+
+const finishClean = () => {
+    console.log('\nMoved mods to modstore folder.')
+    console.log('You can now play Online.')
+    console.log('\nTo be extra safe, you should verify the integrity of your game files:\n')
+    console.log(`- Steam: https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB`)
+    console.log(`- Rockstar Launcher: https://support.rockstargames.com/articles/360036000713/`)
+    console.log(`- Epic Games Launcher: https://www.epicgames.com/help/en-US/technical-support-c90/general-support-c91/how-do-i-verify-game-files-in-the-epic-games-launcher-a3638`)
+    errors = []
 }
 
 const terminate = () => {
