@@ -1,6 +1,16 @@
 # GTA 5 Cleaner
 A tool to clean out mods from Grand Theft Auto 5 for online play, and restore them later.
 
+- [Download](#download)
+- [Usage](#usage)
+- [Building](#building)
+  - [Source Code](#source-code)
+  - [Running on Node](#running-on-node)
+  - [Compiling a Windows Executable](#compiling-a-windows-executable)
+    - [Installing the correct version of nexe](#installing-the-correct-version-of-nexe)
+    - [Compiling the exe](#compiling-the-exe)
+- [Credits](#credits)
+
 ## Download
 
 Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cleaner/releases/latest) page.
@@ -8,17 +18,17 @@ Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cl
 [Download for Windows](https://github.com/ganeshh123/gta5-cleaner/releases/download/1.2.0/gta5cleaner_1.2.0.zip)
 
 ## Usage
-1. Download and extract 'gta5cleaner.exe' to the root 'Grand Theft Auto V' folder (same place as GTAV.exe)
+1. Download and extract `gta5cleaner.exe` to the root 'Grand Theft Auto V' folder (same place as `GTAV.exe`)
 
-2. Double Click and run 'gta5cleaner.exe'
+2. Double Click and run `gta5cleaner.exe`
 
-3. Enter your choice. Either 'clean' or 'restore'
+3. Enter your choice. Either `clean` or `restore`
 
-  'clean' : Cleans your GTA 5 Installation of mods leaving you with the Base Game for Online Play
+  `clean` : Cleans your GTA 5 Installation of mods leaving you with the Base Game for Online Play
   
-  'restore': Restores cleaned mods for Single Player
+  `restore` : Restores cleaned mods for Single Player
 
-  ![usage](docs/usage.png)
+  ![usage](docs/gta5-cleaner.jpg)
   
 4. Once the process is completed, press any key to exit the tool and open the game normally
 
@@ -28,6 +38,10 @@ Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cl
     - Epic Games Launcher: [https://www.epicgames.com/help/en-US/technical-support-c90/general-support-c91/how-do-i-verify-game-files-in-the-epic-games-launcher-a3638](https://www.epicgames.com/help/en-US/technical-support-c90/general-support-c91/how-do-i-verify-game-files-in-the-epic-games-launcher-a3638)
 
 ## Building
+
+### Source Code
+Git Repository: [https://github.com/ganeshh123/gta5-cleaner](https://github.com/ganeshh123/gta5-cleaner)
+
 ### Running on Node
 1. Clone/Download the project and copy app.js and essentialFiles.js into the GTA 5 Installation root directory.
 
@@ -70,9 +84,6 @@ Confirm by running:
 ```bash
 nexe -v
 ```
-
-![nexe-version](docs/nexe-version.png)
-
 Check that the version is `4.0.0-beta.4`
 
 #### Compiling the exe
