@@ -1,6 +1,6 @@
 {
   "name": "gta5-cleaner",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "A tool to clean out mods from Grand Theft Auto 5 for online play, and restore them later.",
   "main": "app.js",
   "scripts": {
