@@ -19,6 +19,7 @@ module.exports = [
     'libcurl.dll',
     'opus.dll',
     'opusenc.dll',
+    'title.rgl',
     'toxmod.dll',
     'x64a.rpf',
     'x64b.rpf',
