@@ -67,7 +67,7 @@ Alternatively, install manually like this:
     nexe . --target win32-x86-10.13.0
     ```
 
-    This will download the binaries we need for later, delete the executables built with this for now.
+    This will download the binaries we need for later, and delete the executables built with this for now.
 
 3. Now we need to install a [specific version of nexe](https://github.com/cspotcode/nexe/tree/fix-vfs) that allows access to the filesystem:
 
