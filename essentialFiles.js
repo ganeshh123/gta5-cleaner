@@ -56,7 +56,7 @@ module.exports = [
     'GPUPerfAPIDX11-x64.dll',
     'NvPmApi.Core.win64.dll',
     'version.txt',
-    'Readme',
+    'ReadMe',
     'Redistributables',
     'EOSSDK-Win64-Shipping.dll',
     /* GTA 5 Cleaner */
