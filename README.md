@@ -15,7 +15,7 @@ A tool to clean out mods from Grand Theft Auto 5 for online play, and restore th
 
 Get the latest version from the [Releases](https://github.com/ganeshh123/gta5-cleaner/releases/latest) page.
 
-[Download for Windows](https://github.com/ganeshh123/gta5-cleaner/releases/download/1.2.3/gta5cleaner_1.2.3.zip)
+[Download for Windows](https://github.com/ganeshh123/gta5-cleaner/releases/download/1.2.4/gta5cleaner_1_2_4.zip)
 
 ## Usage
 1. Download and extract `gta5cleaner.exe` to the root 'Grand Theft Auto V' folder (same place as `GTAV.exe`)
