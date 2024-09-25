@@ -19,6 +19,7 @@ module.exports = [
     'GTAVLauncher.exe',
     'PlayGTAV.exe',
     'libcurl.dll',
+    'libtox.dll',
     'opus.dll',
     'opusenc.dll',
     'title.rgl',
