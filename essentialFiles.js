@@ -64,5 +64,8 @@ module.exports = [
     'EOSSDK-Win64-Shipping.dll',
     /* GTA 5 Cleaner */
     'gta5cleaner.exe',
-    'modstore'
+    'modstore',
+    /* R* Games Launcher */
+    'index.bin',
+    'uninstall.exe'
 ]
