@@ -1,5 +1,3 @@
-// Require Filesystem
-const { Console } = require('console')
 const fileSystem = require('fs')
 const path = require('path')
 const readline = require('readline')
@@ -19,9 +17,10 @@ const cleanMods = (filePath) => {
     if (fileSystem.existsSync(filePath)) {
         /* Ensure that software files and generated PDFs are not deleted */
         let files = fileSystem.readdirSync(filePath).filter((file) => {
-            return !essentialFiles.includes(file)
-        }
-        )
+            return !essentialFiles.includes(file) 
+            && file != "app.js" && file != "essentialFiles.js" // Dirty solution for the weird filesystem in nexe
+        })
+        
         if (files.length < 1) {
             console.log('\nNo mod files found\n')
             return
@@ -109,18 +108,19 @@ const restoreMods = (filePath) => {
 
 const isValidGTA5Folder = (filePath) => {
     const directoryFiles = fileSystem.readdirSync(filePath)
-    const required = ['GTA5.exe', 'x64']
+    const required = ['GTA5.exe', 'GTA5_Enhanced.exe']
+
+    /* Require at least one of the required files for a valid directory */
     for(const file of required){
-        if(directoryFiles.includes(file) === false){
-            return false
+        if(directoryFiles.includes(file)){
+            return true
         }
     }
-    return true
+    return false
 }
 
 const finishClean = () => {
-    console.log('\nMoved mods to modstore folder.')
-    console.log('You can now play Online.')
+    console.log('\nMoved mods to modstore folder. You can now play Online.')
     console.log('\nTo be extra safe, you should verify the integrity of your game files:\n')
     console.log(`- Steam: https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB`)
     console.log(`- Rockstar Launcher: https://support.rockstargames.com/articles/360036000713/`)
@@ -139,7 +139,9 @@ const terminate = () => {
 const main = () => {
     console.log('\nGTA V Mod Cleaner')
 
-    if(isValidGTA5Folder(process.cwd()) === false){
+    const currentDirectory = process.cwd()
+
+    if(isValidGTA5Folder(currentDirectory) === false){
         console.log(`\nPlease place "gta5cleaner.exe" inside your GTA 5 install folder and try again.`)
         return terminate()
     }
@@ -153,9 +155,9 @@ const main = () => {
         terminal.close();
 
         if (choice === 'clean') {
-            cleanMods(process.cwd())
+            cleanMods(currentDirectory)
         } else if (choice === 'restore') {
-            restoreMods(process.cwd())
+            restoreMods(currentDirectory)
         } else {
             console.log('Invalid Choice')
         }

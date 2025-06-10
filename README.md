@@ -49,7 +49,7 @@ Git Repository: [https://github.com/ganeshh123/gta5-cleaner](https://github.com/
 
 
 ### Compiling a Windows Executable
-Executables are compiled with a very [specific version of nexe](https://github.com/cspotcode/nexe/tree/fix-vfs) that allows access to the filesystem, which has a tricky setup procedure.
+Executables are compiled with *currently* the [latest version of nexe](https://www.npmjs.com/package/nexe/v/5.0.0-beta.4) that allows access to the filesystem.
 
 #### Installing the correct version of nexe
 Run **install_nexe_win.bat** as admin on **Windows**, will take about 5 minutes to install fully.
@@ -64,17 +64,17 @@ Alternatively, install manually like this:
 2. In the project root folder build some executables with this version of nexe to download node binaries for Windows:
 
     ```bash
-    nexe . --target win32-x86-10.13.0
+    nexe . --target windows-x86-14.15.3 
     ```
 
     This will download the binaries we need for later, and delete the executables built with this for now.
 
-3. Now we need to install a [specific version of nexe](https://github.com/cspotcode/nexe/tree/fix-vfs) that allows access to the filesystem:
+3. Now we need to install *currently* the [latest version of nexe](https://www.npmjs.com/package/nexe/v/5.0.0-beta.4) that allows access to the filesystem:
 
     Run the command:
 
     ```bash
-    npm install -g cspotcode/nexe#19a5046
+    npm install -g nexe@5.0.0-beta.4
     ```
 
 Now we should have the correct version of nexe for building.
@@ -84,7 +84,7 @@ Confirm by running:
 ```bash
 nexe -v
 ```
-Check that the version is `4.0.0-beta.4`
+Check that the version is `5.0.0-beta.4`
 
 #### Compiling the exe
 Run **build_win32.bat** on **Windows** to build a Windows Executable. This can be found in /dist.
@@ -93,7 +93,7 @@ To Compile Manually
 
 To build a Windows Executable, run the command:
 ```bash
-nexe . --target win32-x86-10.13.0 -o ./dist/gta5cleaner.exe
+nexe . --target windows-x86-14.15.3 -o ./dist/gta5cleaner.exe
 ```
 in the root directory of the project.
 
