@@ -64,5 +64,21 @@ module.exports = [
     'EOSSDK-Win64-Shipping.dll',
     /* GTA 5 Cleaner */
     'gta5cleaner.exe',
-    'modstore'
+    'modstore',
+    /* GTA 5 ENCHANCED */
+    'D3D12-REDIST',
+    'amd_ags_x64.dll',
+    'amd_fidelityfx_dx12.dll',
+    'dstorage.dll',
+    'dstoragecore.dll',
+    'GFSDK_Aftermath_Lib.x64.dll',
+    'GTA5_Enhanced.exe',
+    'GTA5_Enhanced_BE.exe',
+    'nvngx_dlss.dll',
+    'oo2core_5_win64.dll',
+    'rpf.cache',
+    'sl.common.dll',
+    'sl.dlss.dll',
+    'sl.interposer.dll',
+    'XCurl.dll'
 ]

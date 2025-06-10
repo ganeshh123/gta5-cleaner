@@ -1,2 +1,1 @@
-call npm install
-nexe . --target win32-x86-10.13.0 -o ./dist/gta5cleaner.exe
+nexe . --target windows-x86-14.15.3 -o ./dist/gta5cleaner.exe
