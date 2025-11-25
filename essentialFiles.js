@@ -62,6 +62,8 @@ module.exports = [
     'ReadMe',
     'Redistributables',
     'EOSSDK-Win64-Shipping.dll',
+    'versioninfo.txt',
+    'XCurl.dll',
     /* GTA 5 Cleaner */
     'gta5cleaner.exe',
     'modstore'
